@@ -3,25 +3,71 @@ import TechStack from "./components/TechStack";
 import Project from "./components/Project";
 import Hero from "./components/Hero";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Tirmidzi Ahmad",
+  url: BASE_URL,
+  jobTitle: "Fullstack Web Developer",
+  nationality: "Indonesian",
+  knowsAbout: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Express",
+    "PostgreSQL",
+    "MySQL",
+  ],
+  sameAs: ["https://github.com/TirmidziAhmad"],
+  email: "tirmidziahmad.work@gmail.com",
+};
+
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <main className="overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero Section */}
-      <section className="flex flex-col justify-center items-center h-screen ">
+      <section
+        id="hero"
+        aria-label="Introduction hero"
+        className="flex flex-col justify-center items-center h-screen "
+      >
         <Hero />
       </section>
-      {/* introduction */}
-      <section className="h-[50vh] flex flex-col justify-center items-center  gap-4 font-normal">
+
+      {/* About */}
+      <section
+        id="about"
+        aria-label="About Tirmidzi Ahmad"
+        className="h-[50vh] flex flex-col justify-center items-center  gap-4 font-normal"
+      >
         <Introduction />
       </section>
-      {/* tech stack */}
-      <section className="h-[90vh] flex flex-col items-center justify-center gap-2">
+
+      {/* Tech Stack */}
+      <section
+        id="tech-stack"
+        aria-label="Technology stack"
+        className="h-[90vh] flex flex-col items-center justify-center gap-2"
+      >
         <TechStack />
       </section>
-      {/* personal project */}
-      <section className="h-[90vh] flex flex-col items-center justify-center">
+
+      {/* Personal Projects */}
+      <section
+        id="projects"
+        aria-label="Personal projects"
+        className="h-[90vh] flex flex-col items-center justify-center"
+      >
         <Project />
       </section>
-    </div>
+    </main>
   );
 }

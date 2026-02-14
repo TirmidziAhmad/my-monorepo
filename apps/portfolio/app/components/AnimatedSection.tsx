@@ -1,18 +1,18 @@
 "use client";
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { ReactNode } from "react";
 
 // Shared Animation variants
-export const textVariant: Variants = {
+export const textVariant = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
-};
+} as const;
 
-export const imageVariant: Variants = {
+export const imageVariant = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,

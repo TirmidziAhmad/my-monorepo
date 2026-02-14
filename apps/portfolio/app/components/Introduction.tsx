@@ -18,7 +18,7 @@ function Introduction() {
             <motion.span variants={imageVariant}>
               <Image
                 src={me}
-                alt="me"
+                alt="Tirmidzi Ahmad - Web Developer"
                 width={60}
                 height={60}
                 className="hidden md:inline w-12 md:w-16 rounded-full object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
@@ -28,7 +28,7 @@ function Introduction() {
             <motion.span variants={imageVariant}>
               <Image
                 src={jakarta}
-                alt="jakarta"
+                alt="Jakarta, Indonesia cityscape"
                 width={90}
                 height={90}
                 className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
@@ -47,7 +47,7 @@ function Introduction() {
             <motion.span variants={imageVariant}>
               <Image
                 src={fullstack}
-                alt="fullstack"
+                alt="Fullstack web development illustration"
                 width={90}
                 height={90}
                 className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
@@ -65,7 +65,7 @@ function Introduction() {
             <motion.span variants={imageVariant}>
               <Image
                 src={coding}
-                alt="coding"
+                alt="Coding on a laptop"
                 width={90}
                 height={90}
                 className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
@@ -83,7 +83,7 @@ function Introduction() {
             <motion.span variants={imageVariant}>
               <Image
                 src={functionality}
-                alt="functionality"
+                alt="Turning ideas into functional software"
                 width={90}
                 height={90}
                 className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
