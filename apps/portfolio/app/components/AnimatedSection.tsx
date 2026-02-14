@@ -1,6 +1,6 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { ReactNode, useRef, useEffect } from "react";
 
 // Shared Animation variants
 export const textVariant = {
@@ -36,16 +36,23 @@ export function AnimatedSection({
   className,
   delay = 0,
 }: AnimatedSectionProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
+  const isInView = useInView(ref, { margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
 
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
       animate={controls}
-      whileInView="visible"
-      onViewportEnter={() => controls.start("visible")}
-      onViewportLeave={() => controls.start("hidden")}
-      viewport={{ margin: "-100px", once: false }}
       variants={{
         visible: {
           opacity: 1,

@@ -1,6 +1,7 @@
 import Introduction from "./components/Introduction";
 import TechStack from "./components/TechStack";
 import Project from "./components/Project";
+import Blog from "./components/Blog";
 import Hero from "./components/Hero";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
@@ -46,27 +47,36 @@ export default function Home() {
       <section
         id="about"
         aria-label="About Tirmidzi Ahmad"
-        className="h-[50vh] flex flex-col justify-center items-center  gap-4 font-normal"
+        className="min-h-screen flex flex-col justify-center items-center gap-4 font-normal"
       >
         <Introduction />
       </section>
 
       {/* Tech Stack */}
-      <section
+      {/* <section
         id="tech-stack"
         aria-label="Technology stack"
         className="h-[90vh] flex flex-col items-center justify-center gap-2"
       >
         <TechStack />
-      </section>
+      </section> */}
 
       {/* Personal Projects */}
       <section
         id="projects"
         aria-label="Personal projects"
-        className="h-[90vh] flex flex-col items-center justify-center"
+        className="min-h-screen flex flex-col items-center justify-center"
       >
         <Project />
+      </section>
+
+      {/* Blog */}
+      <section
+        id="blog"
+        aria-label="Blog posts"
+        className="min-h-screen flex flex-col items-center justify-center"
+      >
+        <Blog />
       </section>
     </main>
   );

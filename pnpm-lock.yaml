@@ -78,6 +78,9 @@ importers:
       react-simple-typewriter:
         specifier: ^5.0.1
         version: 5.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      react-theme-switch-animation:
+        specifier: ^1.0.0
+        version: 1.0.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -1739,6 +1742,13 @@ packages:
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
+
+  react-theme-switch-animation@1.0.0:
+    resolution: {integrity: sha512-RiV++V5D9HQEt3ZutYQAO37Gmd1uVQBuUBvyptobV+wkpN38iUGmCireJrSlLAEP04B2jT87YD1ABU7Nl7dpsw==}
+    engines: {node: '>=18.17.0'}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
 
   react@19.2.0:
     resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
@@ -3749,6 +3759,11 @@ snapshots:
   react-is@16.13.1: {}
 
   react-simple-typewriter@5.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+
+  react-theme-switch-animation@1.0.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)

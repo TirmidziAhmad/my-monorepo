@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { name: "About", href: "/about" },
   { name: "My Work", href: "/work" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -31,7 +33,7 @@ function NavLinks() {
     <nav
       className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out flex justify-between items-center border ${
         isScrolled
-          ? "top-5 w-[70%] md:w-[50%] rounded-full px-8 justify-between backdrop-blur-xl bg-white/10 shadow-lg border-white/20 text-white"
+          ? "top-5 w-[90%] md:w-[80%] rounded-full px-8 justify-between backdrop-blur-xl bg-background/70 shadow-lg border-foreground/10 text-foreground"
           : "top-0 w-full rounded-none px-5 md:px-10 py-4 bg-transparent border-transparent text-foreground"
       }`}
     >
@@ -115,19 +117,26 @@ function NavLinks() {
         </svg>
       </Link>
 
-      <div className="flex items-center">
+      <div className="flex items-center gap-4">
         {/* Desktop links */}
-        <div className="hidden md:flex gap-7">
+        <div className="hidden md:flex items-center gap-7">
           {links.map((item, index) => (
             <Link
-              className="flex hover:text-white/80 transition-colors"
               key={index}
               href={item.href}
+              className={
+                item.name === "Contact"
+                  ? "px-5 py-2 rounded-full bg-foreground text-background font-bold hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg border border-foreground/10"
+                  : "flex hover:opacity-70 transition-colors"
+              }
             >
               {item.name}
             </Link>
           ))}
         </div>
+
+        {/* Theme Toggle */}
+        <ThemeToggle />
 
         {/* Hamburger menu icon for mobile */}
         <div className="md:hidden">
@@ -146,13 +155,17 @@ function NavLinks() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-black/90 backdrop-blur-md z-40 shadow-md flex flex-col items-center gap-6 py-8 text-white animate-in slide-in-from-top-5 duration-200">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md z-40 shadow-md flex flex-col items-center gap-6 py-8 text-foreground animate-in slide-in-from-top-5 duration-200">
           {links.map((item, index) => (
             <Link
               key={index}
               href={item.href}
               onClick={() => setMenuOpen(false)}
-              className="text-lg font-medium hover:text-gray-300 transition-colors"
+              className={
+                item.name === "Contact"
+                  ? "w-[80%] text-center px-6 py-3 rounded-2xl bg-foreground text-background font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all border border-foreground/10 shadow-lg"
+                  : "text-lg font-medium hover:opacity-70 transition-colors"
+              }
             >
               {item.name}
             </Link>

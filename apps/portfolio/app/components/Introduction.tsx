@@ -10,39 +10,48 @@ import { AnimatedSection, imageVariant, textVariant } from "./AnimatedSection";
 
 function Introduction() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-3 md:space-y-5 px-4">
+      {/* Line 1 */}
       <AnimatedSection>
-        <h2 className="text-base md:text-4xl lg:text-6xl">
-          <span className="flex flex-wrap gap-2 items-center justify-center">
-            <motion.span variants={textVariant}>Tirmidzi Ahmad</motion.span>
+        <h2 className="text-xl md:text-4xl lg:text-6xl font-light">
+          <span className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
+            <motion.span variants={textVariant} className="text-foreground">
+              Tirmidzi Ahmad
+            </motion.span>
             <motion.span variants={imageVariant}>
               <Image
                 src={me}
                 alt="Tirmidzi Ahmad - Web Developer"
                 width={60}
                 height={60}
-                className="hidden md:inline w-12 md:w-16 rounded-full object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
+                className="hidden md:inline w-12 md:w-14 rounded-full object-cover ring-2 ring-foreground/10 hover:ring-foreground/30 hover:scale-110 hover:-rotate-3 transition-all duration-300"
               />
             </motion.span>
-            <motion.span variants={textVariant}>is Indonesian</motion.span>
+            <motion.span variants={textVariant} className="text-foreground/60">
+              is Indonesian
+            </motion.span>
             <motion.span variants={imageVariant}>
               <Image
                 src={jakarta}
                 alt="Jakarta, Indonesia cityscape"
                 width={90}
                 height={90}
-                className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
+                className="hidden md:inline w-16 md:w-20 rounded-lg object-cover ring-2 ring-foreground/10 hover:ring-foreground/30 hover:scale-110 hover:-rotate-3 transition-all duration-300"
               />
             </motion.span>
           </span>
         </h2>
       </AnimatedSection>
 
+      {/* Line 2 */}
       <AnimatedSection>
-        <h2 className="text-base md:text-4xl lg:text-6xl">
-          <span className="flex flex-wrap gap-2 items-center justify-center">
-            <motion.span variants={textVariant}>
-              1+ year of experience web developer
+        <h2 className="text-xl md:text-4xl lg:text-6xl font-light">
+          <span className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
+            <motion.span variants={textVariant} className="text-foreground/60">
+              1+ year of experience
+            </motion.span>
+            <motion.span variants={textVariant} className="text-foreground">
+              web developer
             </motion.span>
             <motion.span variants={imageVariant}>
               <Image
@@ -50,46 +59,66 @@ function Introduction() {
                 alt="Fullstack web development illustration"
                 width={90}
                 height={90}
-                className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
+                className="hidden md:inline w-16 md:w-20 rounded-lg object-cover ring-2 ring-foreground/10 hover:ring-foreground/30 hover:scale-110 hover:-rotate-3 transition-all duration-300"
               />
             </motion.span>
-            <motion.span variants={textVariant}>,</motion.span>
           </span>
         </h2>
       </AnimatedSection>
 
+      {/* Divider */}
+      <AnimatedSection className="flex justify-center">
+        <motion.div
+          variants={textVariant}
+          className="w-12 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent"
+        />
+      </AnimatedSection>
+
+      {/* Line 3 */}
       <AnimatedSection>
-        <h2 className="text-base md:text-4xl lg:text-6xl text-slate-500">
-          <span className="flex flex-wrap gap-2 items-center justify-center">
-            <motion.span variants={textVariant}>Who turns</motion.span>
+        <h2 className="text-xl md:text-4xl lg:text-6xl font-light">
+          <span className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
+            <motion.span variants={textVariant} className="text-foreground/40">
+              Who turns
+            </motion.span>
             <motion.span variants={imageVariant}>
               <Image
                 src={coding}
                 alt="Coding on a laptop"
                 width={90}
                 height={90}
-                className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
+                className="hidden md:inline w-16 md:w-20 rounded-lg object-cover ring-2 ring-foreground/10 hover:ring-foreground/30 hover:scale-110 hover:-rotate-3 transition-all duration-300"
               />
             </motion.span>
-            <motion.span variants={textVariant}>ideas</motion.span>
+            <motion.span variants={textVariant} className="text-foreground/40">
+              ideas
+            </motion.span>
           </span>
         </h2>
       </AnimatedSection>
 
+      {/* Line 4 */}
       <AnimatedSection>
-        <h2 className="text-base md:text-4xl lg:text-6xl text-slate-500">
-          <span className="flex flex-wrap gap-2 items-center justify-center">
-            <motion.span variants={textVariant}>into</motion.span>
+        <h2 className="text-xl md:text-4xl lg:text-6xl font-light">
+          <span className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
+            <motion.span variants={textVariant} className="text-foreground/40">
+              into
+            </motion.span>
             <motion.span variants={imageVariant}>
               <Image
                 src={functionality}
                 alt="Turning ideas into functional software"
                 width={90}
                 height={90}
-                className="hidden md:inline w-16 md:w-24 rounded-md object-cover hover:scale-125 hover:-rotate-6 transition-all duration-300"
+                className="hidden md:inline w-16 md:w-20 rounded-lg object-cover ring-2 ring-foreground/10 hover:ring-foreground/30 hover:scale-110 hover:-rotate-3 transition-all duration-300"
               />
             </motion.span>
-            <motion.span variants={textVariant}>functionality.</motion.span>
+            <motion.span
+              variants={textVariant}
+              className="text-foreground font-medium opacity-90"
+            >
+              functionality.
+            </motion.span>
           </span>
         </h2>
       </AnimatedSection>
