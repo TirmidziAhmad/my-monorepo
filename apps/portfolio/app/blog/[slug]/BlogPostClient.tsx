@@ -57,7 +57,7 @@ export default function BlogPostClient({ post }: { post: Post }) {
           variants={textVariant}
           className="flex flex-wrap gap-2 mb-6"
         >
-          {post.tags.map((tag) => (
+          {post.tags.map((tag: string) => (
             <span
               key={tag}
               className="px-3 py-1 text-xs font-medium rounded-full bg-foreground/[0.08] text-gray-500 border border-foreground/10"

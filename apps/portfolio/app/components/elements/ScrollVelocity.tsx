@@ -44,7 +44,7 @@ interface ScrollVelocityProps {
   scrollerStyle?: React.CSSProperties;
 }
 
-function useElementWidth(ref: React.RefObject<HTMLElement>): number {
+function useElementWidth(ref: React.RefObject<HTMLElement | null>): number {
   const [width, setWidth] = useState(0);
 
   useLayoutEffect(() => {
@@ -103,7 +103,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
       smoothVelocity,
       velocityMapping?.input || [0, 1000],
       velocityMapping?.output || [0, 5],
-      { clamp: false }
+      { clamp: false },
     );
 
     const copyRef = useRef<HTMLSpanElement>(null);
@@ -139,7 +139,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
       spans.push(
         <span className={className} key={i} ref={i === 0 ? copyRef : null}>
           {children}
-        </span>
+        </span>,
       );
     }
 

@@ -33,77 +33,79 @@ function Blog() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {posts.map((post, index) => (
-            <motion.a
-              key={index}
-              href={`/blog/${post.slugAsParams}`}
-              variants={imageVariant}
-              whileHover={{ y: -5 }}
-              className="group relative flex flex-col h-full p-8 rounded-2xl 
+          {posts
+            .filter((post) => post.featured)
+            .map((post, index) => (
+              <motion.a
+                key={index}
+                href={`/blog/${post.slugAsParams}`}
+                variants={imageVariant}
+                whileHover={{ y: -5 }}
+                className="group relative flex flex-col h-full p-8 rounded-2xl 
                 bg-foreground/[0.03] backdrop-blur-xl border border-foreground/10 
                 hover:border-foreground/30
                 hover:shadow-lg
                 cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
-              {/* Image Preview */}
-              <div className="relative h-48 -mx-8 -mt-8 mb-6 overflow-hidden rounded-t-2xl border-b border-foreground/10">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              {/* Featured Badge */}
-              {post.featured && (
-                <div className="absolute -top-3 -left-2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 border border-amber-600 text-white text-xs font-bold tracking-wide z-10 -rotate-6 shadow-[0_2px_12px_rgba(245,158,11,0.5)]">
-                  <Star className="w-3.5 h-3.5 fill-white" />
-                  Featured
+                {/* Image Preview */}
+                <div className="relative h-48 -mx-8 -mt-8 mb-6 overflow-hidden rounded-t-2xl border-b border-foreground/10">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              )}
 
-              {/* Tags */}
-              <div className="relative flex flex-wrap gap-2 mb-4">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-medium rounded-full 
+                {/* Featured Badge */}
+                {post.featured && (
+                  <div className="absolute -top-3 -left-2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 border border-amber-600 text-white text-xs font-bold tracking-wide z-10 -rotate-6 shadow-[0_2px_12px_rgba(245,158,11,0.5)]">
+                    <Star className="w-3.5 h-3.5 fill-white" />
+                    Featured
+                  </div>
+                )}
+
+                {/* Tags */}
+                <div className="relative flex flex-wrap gap-2 mb-4">
+                  {post.tags.map((tag: string) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-xs font-medium rounded-full 
                       bg-foreground/5 text-gray-500 dark:text-gray-300 border border-foreground/10"
-                  >
-                    {tag}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Title */}
+                <h3 className="relative text-xl font-bold mb-3 text-foreground group-hover:opacity-80 transition-colors leading-snug">
+                  {post.title}
+                  <ArrowUpRight className="inline-block w-5 h-5 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </h3>
+
+                {/* Excerpt */}
+                <p className="relative text-gray-400 mb-6 flex-grow font-light leading-relaxed group-hover:text-gray-300 transition-colors text-sm">
+                  {post.excerpt}
+                </p>
+
+                {/* Meta */}
+                <div className="relative flex items-center gap-4 text-xs text-gray-500">
+                  <span className="flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5" />
+                    {post.date}
                   </span>
-                ))}
-              </div>
-
-              {/* Title */}
-              <h3 className="relative text-xl font-bold mb-3 text-foreground group-hover:opacity-80 transition-colors leading-snug">
-                {post.title}
-                <ArrowUpRight className="inline-block w-5 h-5 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </h3>
-
-              {/* Excerpt */}
-              <p className="relative text-gray-400 mb-6 flex-grow font-light leading-relaxed group-hover:text-gray-300 transition-colors text-sm">
-                {post.excerpt}
-              </p>
-
-              {/* Meta */}
-              <div className="relative flex items-center gap-4 text-xs text-gray-500">
-                <span className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5" />
-                  {post.date}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5" />
-                  {post.readTime}
-                </span>
-              </div>
-            </motion.a>
-          ))}
+                  <span className="flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5" />
+                    {post.readTime}
+                  </span>
+                </div>
+              </motion.a>
+            ))}
         </div>
 
         <motion.div

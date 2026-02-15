@@ -1,0 +1,11 @@
+app/blog/[slug]/BlogPostClient.tsx(60,27): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+app/blog/page.tsx(132,33): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+app/components/Blog.tsx(74,35): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+app/components/Project.tsx(77,40): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+app/work/[slug]/ProjectDetailClient.tsx(105,46): error TS7006: Parameter 'tag' implicitly has an 'any' type.
+app/work/[slug]/ProjectDetailClient.tsx(157,40): error TS7006: Parameter 'feature' implicitly has an 'any' type.
+app/work/[slug]/ProjectDetailClient.tsx(157,49): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/work/[slug]/ProjectDetailClient.tsx(201,44): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/work/[slug]/ProjectDetailClient.tsx(201,50): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/work/[slug]/ProjectDetailClient.tsx(221,44): error TS7006: Parameter 'tech' implicitly has an 'any' type.
+app/work/page.tsx(157,40): error TS7006: Parameter 'tag' implicitly has an 'any' type.

@@ -1,0 +1,24 @@
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ParseContext'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'RefinementCtx'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodCustomIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodEffectsDef'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidArgumentsIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidDateIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidEnumValueIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidIntersectionTypesIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidLiteralIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidReturnTypeIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidStringIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidTypeIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidUnionDiscriminatorIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodInvalidUnionIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodNotFiniteIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodNotMultipleOfIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodOptionalDef'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodTooBigIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodTooSmallIssue'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodTypeDef'.
+velite.config.ts(52,1): error TS4082: Default export of the module has or is using private name 'ZodUnrecognizedKeysIssue'.
+velite.config.ts(52,1): error TS4094: Property '_cached' of exported anonymous class type may not be private or protected.
+velite.config.ts(52,1): error TS4118: The type of this node cannot be serialized because its property '[iterator]' cannot be serialized.
+velite.config.ts(52,1): error TS7056: The inferred type of this node exceeds the maximum length the compiler will serialize. An explicit type annotation is needed.

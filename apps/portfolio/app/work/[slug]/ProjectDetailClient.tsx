@@ -102,7 +102,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
               Category
             </p>
             <div className="flex flex-wrap gap-2">
-              {project.tags.slice(0, 2).map((tag) => (
+              {project.tags.slice(0, 2).map((tag: string) => (
                 <span key={tag} className="text-foreground font-medium">
                   {tag}
                 </span>
@@ -154,7 +154,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                 Key Features
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.features.map((feature, i) => (
+                {project.features.map((feature: string, i: number) => (
                   <div
                     key={i}
                     className="flex gap-4 p-6 rounded-2xl bg-foreground/[0.02] border border-foreground/5 hover:border-foreground/10 transition-colors"
@@ -198,7 +198,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                 Achievements
               </h3>
               <ul className="space-y-6">
-                {project.achievements.map((item, i) => (
+                {project.achievements.map((item: string, i: number) => (
                   <li key={i} className="flex gap-4 group">
                     <div className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform" />
                     <span className="text-gray-500 dark:text-gray-400 text-sm font-light leading-relaxed group-hover:text-foreground dark:group-hover:text-gray-200 transition-colors">
@@ -218,7 +218,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                 Tech Stack
               </h3>
               <div className="flex flex-wrap gap-2.5">
-                {project.technologies.map((tech) => (
+                {project.technologies.map((tech: string) => (
                   <span
                     key={tech}
                     className="px-4 py-2 rounded-xl bg-foreground/[0.05] border border-foreground/10 text-gray-500 dark:text-gray-300 text-xs font-medium hover:bg-foreground/[0.1] hover:text-foreground dark:hover:text-white transition-all cursor-default"

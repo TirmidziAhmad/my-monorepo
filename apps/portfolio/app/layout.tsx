@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "Tirmidzi Ahmad Portfolio",
-    title: "Tirmidzi Ahmad — Web Developer Portfolio",
+    title: "👋 Tirmidzi Ahmad — Frontend Web Developer",
     description:
       "Indonesian fullstack web developer specializing in React, Next.js, TypeScript, and Express. Explore projects and get in touch.",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Tirmidzi Ahmad — Web Developer Portfolio",
+    title: "👋 Tirmidzi Ahmad — Frontend Web Developer",
     description:
       "Indonesian fullstack web developer specializing in React, Next.js, TypeScript, and Express.",
     images: ["/me.png"],

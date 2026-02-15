@@ -154,7 +154,7 @@ export default function WorkPage() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
+                    {project.tags.map((tag: string) => (
                       <span
                         key={tag}
                         className="px-2.5 py-1 text-[11px] font-medium rounded-full 

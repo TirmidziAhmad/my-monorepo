@@ -63,4 +63,4 @@ export default defineConfig({
     rehypePlugins: [],
     remarkPlugins: [],
   },
-});
+}) as any;

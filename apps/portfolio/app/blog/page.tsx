@@ -129,7 +129,7 @@ export default function BlogPage() {
 
               {/* Tags */}
               <div className="relative flex flex-wrap gap-2 mb-4">
-                {post.tags.map((tag) => (
+                {post.tags.map((tag: string) => (
                   <span
                     key={tag}
                     className="px-3 py-1 text-xs font-medium rounded-full 
