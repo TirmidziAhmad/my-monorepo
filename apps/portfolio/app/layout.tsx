@@ -9,6 +9,9 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  verification: {
+    google: "Jf1elhcJRCr6Z29uqVQPC7W2KNB0YZT___r9qZjAX1I",
+  },
   title: {
     default: "👋 Tirmidzi Ahmad — Frontend Web Developer",
     template: "%s | Tirmidzi Ahmad",
