@@ -12,7 +12,9 @@ import {
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { verifyCaptcha } from "../actions/verifyCaptcha";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -20,12 +22,40 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log("Form submitted:", formState);
-    alert("Thanks for reaching out! (This is a demo)");
+
+    if (!captchaToken) {
+      alert("Please complete the captcha");
+      return;
+    }
+
+    try {
+      const verificationResult = await verifyCaptcha(captchaToken);
+
+      if (verificationResult.success) {
+        console.log("Form submitted:", formState);
+        alert("Thanks for reaching out! (This is a demo)");
+        // Reset form
+        setFormState({ name: "", email: "", message: "" });
+        setCaptchaToken(null);
+        recaptchaRef.current?.reset();
+      } else {
+        alert("Captcha verification failed. Please try again.");
+        recaptchaRef.current?.reset();
+        setCaptchaToken(null);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+
+  const onCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
   };
 
   const socials = [
@@ -157,6 +187,18 @@ export default function ContactPage() {
                     setFormState({ ...formState, message: e.target.value })
                   }
                   className="w-full px-6 py-4 rounded-2xl bg-foreground/[0.02] border border-foreground/10 text-foreground focus:border-emerald-500/50 focus:bg-foreground/[0.05] transition-all outline-none resize-none placeholder:text-gray-400"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={
+                    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+                    "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                  } // Fallback to test key if env var missing
+                  onChange={onCaptchaChange}
+                  theme="dark"
                 />
               </div>
 
