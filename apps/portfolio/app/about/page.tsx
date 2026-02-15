@@ -12,6 +12,20 @@ import {
   Download,
   ArrowLeft,
 } from "lucide-react";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiAxios,
+  SiGit,
+  SiFigma,
+} from "react-icons/si";
+import { TbSeo, TbTimeline } from "react-icons/tb";
+import { MdQueryStats } from "react-icons/md";
 import Link from "next/link";
 
 /* ── CV Data ─────────────────────────────────────────── */
@@ -27,21 +41,21 @@ const summary =
   "Frontend Developer with 1+ years experience building scalable, responsive, and user-friendly web applications. Proficient in React.js and Next.js, combined with Tailwind CSS and modern UI/UX practices, with additional exposure to backend development using ExpressJs, PostgreSQL, and API integration.";
 
 const skills = [
-  "HTML5",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "ReactJS",
-  "NextJS",
-  "Tailwind",
-  "Axios",
-  "SWR",
-  "React Query",
-  "Zustand",
-  "Git",
-  "Figma",
-  "SEO",
-  "Agile",
+  { name: "HTML5", icon: SiHtml5 },
+  { name: "CSS", icon: SiCss3 },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "ReactJS", icon: SiReact },
+  { name: "NextJS", icon: SiNextdotjs },
+  { name: "Tailwind", icon: SiTailwindcss },
+  { name: "Axios", icon: SiAxios },
+  { name: "SWR", icon: Code },
+  { name: "React Query", icon: MdQueryStats },
+  { name: "Zustand", icon: Code },
+  { name: "Git", icon: SiGit },
+  { name: "Figma", icon: SiFigma },
+  { name: "SEO", icon: TbSeo },
+  { name: "Agile", icon: TbTimeline },
 ];
 
 const experiences = [
@@ -213,14 +227,18 @@ export default function AboutPage() {
         </motion.div>
 
         <motion.div variants={textVariant} className="flex flex-wrap gap-2.5">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-4 py-2 text-sm font-medium rounded-full bg-foreground/[0.06] text-gray-500 border border-foreground/10 hover:border-foreground/25 hover:bg-foreground/[0.1] transition-all duration-300 cursor-default"
-            >
-              {skill}
-            </span>
-          ))}
+          {skills.map((skill) => {
+            const IconComponent = skill.icon;
+            return (
+              <span
+                key={skill.name}
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-foreground/[0.06] text-gray-500 border border-foreground/10 hover:border-foreground/25 hover:bg-foreground/[0.1] transition-all duration-300 cursor-default"
+              >
+                <IconComponent className="w-3.5 h-3.5 text-foreground/40" />
+                {skill.name}
+              </span>
+            );
+          })}
         </motion.div>
       </AnimatedSection>
 
@@ -385,18 +403,19 @@ export default function AboutPage() {
         >
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-8 h-px bg-foreground/10" />
-            Want a copy?
+            --- Want a copy? ---
             <span className="w-8 h-px bg-foreground/10" />
           </p>
           <motion.a
-            href="mailto:tirmidziahmad.work@gmail.com?subject=CV%20Request"
+            href="/file/CV-TirmidziAhmadFuzna.pdf"
+            download="CV-TirmidziAhmadFuzna.pdf"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-semibold text-sm overflow-hidden transition-all duration-300 border border-foreground/10 shadow-lg"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
             <Download className="w-4 h-4" />
-            Request Full CV
+            Download Full CV
           </motion.a>
         </motion.div>
       </AnimatedSection>

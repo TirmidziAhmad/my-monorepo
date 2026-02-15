@@ -121,8 +121,8 @@ export default function BlogPage() {
 
               {/* Featured Badge */}
               {post.featured && (
-                <div className="absolute -top-3 -left-2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-400 text-xs font-semibold tracking-wide z-10 -rotate-6">
-                  <Star className="w-3.5 h-3.5 fill-amber-400" />
+                <div className="absolute -top-3 -left-2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 border border-amber-600 text-white text-xs font-bold tracking-wide z-10 -rotate-6 shadow-[0_2px_12px_rgba(245,158,11,0.5)]">
+                  <Star className="w-3.5 h-3.5 fill-white" />
                   Featured
                 </div>
               )}

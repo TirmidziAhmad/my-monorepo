@@ -2,6 +2,8 @@ export interface Project {
   title: string;
   description: string;
   link: string;
+  github?: string; // Optional GitHub repository link
+  date: string; // Project completion/publication date
   tags: string[];
   gradient: string;
   icon: string;
@@ -22,6 +24,8 @@ export const projects: Project[] = [
     description:
       "A fullstack Netflix clone app built with React and Express, using Zustand for front-end state management.",
     link: "https://chill-netflix-clone.vercel.app/",
+    github: "https://github.com/TirmidziAhmad/chill-netflix-clone",
+    date: "November 2024",
     tags: ["React", "Express", "Zustand", "Fullstack"],
     gradient: "from-red-500/20 via-rose-500/10 to-purple-500/20",
     icon: "🎬",
@@ -60,6 +64,8 @@ export const projects: Project[] = [
     description:
       "An app to determine the area and perimeter of a square, built with HTML, CSS, and JavaScript.",
     link: "https://tirmidziahmad.github.io/SiPalingPersegi/",
+    github: "https://github.com/TirmidziAhmad/SiPalingPersegi",
+    date: "October 2023",
     tags: ["HTML", "CSS", "JavaScript"],
     gradient: "from-cyan-500/20 via-blue-500/10 to-indigo-500/20",
     icon: "📐",

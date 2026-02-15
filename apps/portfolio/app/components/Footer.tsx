@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection, textVariant } from "./AnimatedSection";
 
 import { Mail, Linkedin, Github, Instagram } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const footerLinks = [
   {
@@ -33,19 +34,21 @@ const footerLinks = [
 ];
 
 function Footer() {
+  const router = useRouter();
+
   return (
     <footer className="w-full py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-black/5 dark:border-white/5">
       <AnimatedSection className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
         <motion.div variants={textVariant} className="mb-12">
-          <a
-            href="mailto:tirmidziahmad.work@gmail.com"
+          <div
+            onClick={() => router.push("/contact")}
             className="group relative inline-block"
           >
             <span className="text-5xl md:text-8xl font-bold text-foreground tracking-tighter transition-all duration-300 group-hover:opacity-70">
-              LETS CONNECT
+              SAY HI 🤙
             </span>
             <span className="absolute -bottom-2 left-0 w-0 h-1 bg-current transition-all duration-300 group-hover:w-full" />
-          </a>
+          </div>
         </motion.div>
 
         <motion.div

@@ -1,17 +1,8 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
-import { ReactNode } from "react";
+import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { ArrowDown } from "lucide-react";
-
-const textVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as const },
-  },
-} as const;
+import { AnimatedSection, textVariant } from "./AnimatedSection";
 
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -20,34 +11,6 @@ const fadeIn = {
     transition: { duration: 1, ease: "easeOut" as const },
   },
 } as const;
-
-interface AnimatedSectionProps {
-  children: ReactNode;
-  className?: string;
-  stagger?: number;
-}
-
-function AnimatedSection({ children, className }: AnimatedSectionProps) {
-  const controls = useAnimation();
-
-  return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      animate={controls}
-      whileInView="visible"
-      onViewportEnter={() => controls.start("visible")}
-      onViewportLeave={() => controls.start("hidden")}
-      viewport={{ margin: "-100px" }}
-      variants={{
-        visible: { transition: { staggerChildren: 0.1 } },
-        hidden: { transition: { staggerChildren: 0.05 } },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 function Hero() {
   return (

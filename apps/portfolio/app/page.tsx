@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import Introduction from "./components/Introduction";
 import TechStack from "./components/TechStack";
 import Project from "./components/Project";
@@ -27,6 +29,10 @@ const jsonLd = {
 };
 
 export default function Home() {
+  useEffect(() => {
+    // Scroll to top when home page mounts to ensure Hero is visible
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <main className="overflow-x-hidden">
       <script

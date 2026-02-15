@@ -5,7 +5,14 @@ import {
   textVariant,
   imageVariant,
 } from "../components/AnimatedSection";
-import { ArrowUpRight, Star, ExternalLink, ArrowLeft } from "lucide-react";
+import {
+  ArrowUpRight,
+  Star,
+  ExternalLink,
+  ArrowLeft,
+  Github,
+  Calendar,
+} from "lucide-react";
 import { projects } from "../data/projects";
 import Link from "next/link";
 import { useState } from "react";
@@ -139,6 +146,12 @@ export default function WorkPage() {
 
                 {/* Content */}
                 <div className="relative flex flex-col flex-grow p-6 pt-4">
+                  {/* Date */}
+                  <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-3">
+                    <Calendar className="w-3 h-3" />
+                    {project.date}
+                  </div>
+
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
@@ -164,20 +177,37 @@ export default function WorkPage() {
                     {project.description}
                   </p>
 
-                  {/* Action Button */}
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative inline-flex items-center justify-center w-full px-6 py-3 
-                    text-sm font-medium tracking-wide text-background bg-foreground rounded-xl 
-                    hover:opacity-90 transition-opacity duration-300 shadow-md"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    <span>View Live Project</span>
-                  </motion.a>
+                  {/* Action Buttons */}
+                  <div className="flex gap-2">
+                    <motion.a
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative inline-flex items-center justify-center flex-1 px-6 py-3 
+                      text-sm font-medium tracking-wide text-background bg-foreground rounded-xl 
+                      hover:opacity-90 transition-opacity duration-300 shadow-md"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <span>View Live</span>
+                    </motion.a>
+                    {project.github && (
+                      <motion.a
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative inline-flex items-center justify-center px-4 py-3 
+                        text-sm font-medium text-foreground bg-foreground/10 rounded-xl 
+                        hover:bg-foreground/20 border border-foreground/20 transition-all duration-300"
+                        title="View on GitHub"
+                      >
+                        <Github className="w-4 h-4" />
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             </Link>

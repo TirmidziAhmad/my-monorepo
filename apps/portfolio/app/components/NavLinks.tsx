@@ -40,79 +40,84 @@ function NavLinks() {
       {/* logo */}
       <Link className="flex items-center justify-center p-1" href="/">
         <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
+          width="36"
+          height="38"
+          viewBox="0 0 36 36"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="group hover:scale-110 transition-transform duration-300 overflow-visible"
         >
-          {/* Glow Effect Filter */}
           <defs>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+            {/* Gradient for accent glow */}
+            <linearGradient
+              id="logoGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" stopColor="currentColor" stopOpacity="0.6" />
+              <stop offset="50%" stopColor="currentColor" stopOpacity="1" />
+              <stop offset="100%" stopColor="currentColor" stopOpacity="0.6" />
+            </linearGradient>
+            <filter id="logoGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="1" result="blur" />
               <feMerge>
-                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
           </defs>
 
-          {/* Left Vertical Bar - Segmented */}
-          <path
-            d="M7 8H12V26H7V8Z"
-            stroke="currentColor"
-            strokeWidth="0.5"
-            fill="currentColor"
-            className="group-hover:fill-white/90 transition-colors animate-draw-fill"
-            style={{ animationDelay: "0ms" }}
-          />
-          <path
-            d="M7 28H12V32H7V28Z"
-            stroke="currentColor"
-            strokeWidth="0.5"
-            fill="currentColor"
-            className="group-hover:translate-y-0.5 transition-transform animate-draw-fill"
-            style={{ animationDelay: "100ms" }}
-          />
-
-          {/* Right Vertical Bar - Segmented */}
-          <path
-            d="M28 8H33V26H28V8Z"
-            stroke="currentColor"
-            strokeWidth="0.5"
-            fill="currentColor"
-            className="group-hover:fill-white/90 transition-colors animate-draw-fill"
-            style={{ animationDelay: "200ms" }}
-          />
-          <path
-            d="M28 28H33V32H28V28Z"
-            stroke="currentColor"
-            strokeWidth="0.5"
-            fill="currentColor"
-            className="group-hover:translate-y-0.5 transition-transform animate-draw-fill"
-            style={{ animationDelay: "300ms" }}
-          />
-
-          {/* Center V Shape - Animated */}
-          <path
-            d="M12 8 L20 20 L28 8"
+          {/* T horizontal bar — extends through A's peak */}
+          <line
+            x1="4"
+            y1="6"
+            x2="32"
+            y2="6"
             stroke="currentColor"
             strokeWidth="4"
-            strokeLinecap="square"
-            fill="none"
-            className="drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] animate-draw-fill"
-            style={{ animationDelay: "400ms", fill: "none" }} // Keep fill none for this path
+            strokeLinecap="round"
+            className="animate-draw-fill group-hover:drop-shadow-[0_0_6px_currentColor] transition-all duration-300"
+            style={{ animationDelay: "0ms" }}
           />
 
-          {/* Center Activity Dot - Pulsing */}
-          <circle
-            cx="20"
-            cy="28"
-            r="2.5"
-            fill="currentColor"
-            className="animate-pulse animate-draw-fill"
-            style={{ filter: "url(#glow)", animationDelay: "600ms" }}
+          {/* A legs — descend from the T stem center */}
+          <path
+            d="M7 30L18 6L29 30"
+            stroke="currentColor"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            className="animate-draw-fill group-hover:drop-shadow-[0_0_6px_currentColor] transition-all duration-300"
+            style={{ animationDelay: "400ms" }}
+          />
+
+          {/* A crossbar */}
+          <line
+            x1="11"
+            y1="21"
+            x2="25"
+            y2="21"
+            stroke="currentColor"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            className="animate-draw-fill group-hover:drop-shadow-[0_0_6px_currentColor] transition-all duration-300"
+            style={{ animationDelay: "800ms" }}
+          />
+
+          {/* Accent underline */}
+          <line
+            x1="7"
+            y1="34"
+            x2="29"
+            y2="34"
+            stroke="url(#logoGradient)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            className="animate-draw-fill opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ filter: "url(#logoGlow)", animationDelay: "1200ms" }}
           />
         </svg>
       </Link>
@@ -126,7 +131,7 @@ function NavLinks() {
               href={item.href}
               className={
                 item.name === "Contact"
-                  ? "px-5 py-2 rounded-full bg-foreground text-background font-bold hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg border border-foreground/10"
+                  ? "px-5  rounded-full bg-foreground text-background font-bold border border-foreground/10 hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-xl"
                   : "flex hover:opacity-70 transition-colors"
               }
             >
@@ -163,8 +168,8 @@ function NavLinks() {
               onClick={() => setMenuOpen(false)}
               className={
                 item.name === "Contact"
-                  ? "w-[80%] text-center px-6 py-3 rounded-2xl bg-foreground text-background font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-all border border-foreground/10 shadow-lg"
-                  : "text-lg font-medium hover:opacity-70 transition-colors"
+                  ? "w-[85%] text-center px-6 py-4 rounded-2xl bg-foreground text-background font-extrabold text-xl hover:scale-[1.02] active:scale-[0.98] transition-all border-2 border-foreground/20 shadow-xl"
+                  : "text-lg font-semibold hover:opacity-70 transition-colors"
               }
             >
               {item.name}

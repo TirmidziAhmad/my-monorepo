@@ -36,16 +36,15 @@ function Project() {
                 className="group relative flex flex-col h-full rounded-2xl 
                   bg-foreground/[0.03] backdrop-blur-xl border border-foreground/10 
                   hover:border-foreground/20 transition-all duration-500
-                  hover:shadow-lg
-                  overflow-hidden"
+                  hover:shadow-lg"
               >
                 {/* Hover glow overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
 
                 {/* Featured Badge */}
                 {project.featured && (
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-400 text-xs font-semibold tracking-wide z-10">
-                    <Star className="w-3 h-3 fill-amber-400" />
+                  <div className="absolute -top-3 -left-2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 border border-amber-600 text-white text-xs font-bold tracking-wide z-10 -rotate-6 shadow-[0_2px_12px_rgba(245,158,11,0.5)]">
+                    <Star className="w-3.5 h-3.5 fill-white" />
                     Featured
                   </div>
                 )}
@@ -124,7 +123,7 @@ function Project() {
         >
           <p className="text-gray-500 text-sm mb-6 flex items-center gap-2">
             <span className="w-8 h-px bg-foreground/10" />
-            Curious what else I've been building?
+            --- Curious what else I've been building? ---
             <span className="w-8 h-px bg-foreground/10" />
           </p>
           <Link
