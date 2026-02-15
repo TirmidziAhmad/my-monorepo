@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import NavLinks from "./components/NavLinks";
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
@@ -101,6 +102,7 @@ export default function RootLayout({
 
         {/* footer */}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
