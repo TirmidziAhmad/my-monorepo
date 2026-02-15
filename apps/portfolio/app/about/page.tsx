@@ -34,7 +34,7 @@ const contact = {
   name: "Tirmidzi Ahmad Fuzna",
   phone: "+6285325492308",
   email: "tirmidziahmad.work@gmail.com",
-  location: "Pemalang, Central Java",
+  location: "Pemalang, Indonesia",
 };
 
 const summary =

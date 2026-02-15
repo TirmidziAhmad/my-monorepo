@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { projects } from "../../data/projects";
+import { projects } from ".velite";
 import ProjectDetailClient from "./ProjectDetailClient";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
-    slug: project.slug,
+    slug: project.slugAsParams,
   }));
 }
 
@@ -15,7 +15,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = projects.find((p) => p.slugAsParams === slug);
 
   if (!project) {
     return {
@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = projects.find((p) => p.slugAsParams === slug);
 
   if (!project) {
     notFound();

@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, textVariant, imageVariant } from "./AnimatedSection";
 import { ArrowUpRight, Star, ExternalLink, Github } from "lucide-react";
-import { projects } from "../data/projects";
+import { projects } from ".velite";
 import Link from "next/link";
 
 function Project() {
@@ -27,7 +27,7 @@ function Project() {
           {projects.map((project, index) => (
             <Link
               key={index}
-              href={`/work/${project.slug}`}
+              href={`/work/${project.slugAsParams}`}
               className="block h-full cursor-pointer"
             >
               <motion.div

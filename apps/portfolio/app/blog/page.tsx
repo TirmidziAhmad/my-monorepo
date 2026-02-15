@@ -6,7 +6,7 @@ import {
   imageVariant,
 } from "../components/AnimatedSection";
 import { Calendar, Clock, ArrowUpRight, Star, ArrowLeft } from "lucide-react";
-import { posts } from "../data/posts";
+import { posts } from ".velite";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
@@ -97,7 +97,7 @@ export default function BlogPage() {
         {filtered.map((post, index) => (
           <AnimatedSection key={post.title}>
             <motion.a
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.slugAsParams}`}
               variants={cardVariant}
               whileHover={{ y: -5 }}
               className="group relative flex flex-col h-full p-8 rounded-2xl 

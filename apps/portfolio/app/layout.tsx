@@ -9,7 +9,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Tirmidzi Ahmad — Web Developer Portfolio",
+    default: "👋 Tirmidzi Ahmad — Frontend Web Developer",
     template: "%s | Tirmidzi Ahmad",
   },
   description:
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "/me.png",
         width: 400,
         height: 400,
-        alt: "Tirmidzi Ahmad — Web Developer",
+        alt: "Tirmidzi Ahmad — Frontend Web Developer",
       },
     ],
   },

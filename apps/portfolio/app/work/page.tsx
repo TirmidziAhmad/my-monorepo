@@ -13,7 +13,7 @@ import {
   Github,
   Calendar,
 } from "lucide-react";
-import { projects } from "../data/projects";
+import { projects } from ".velite";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -103,7 +103,7 @@ export default function WorkPage() {
         {filtered.map((project, index) => (
           <AnimatedSection key={project.title}>
             <Link
-              href={`/work/${project.slug}`}
+              href={`/work/${project.slugAsParams}`}
               className="block h-full cursor-pointer"
             >
               <motion.div

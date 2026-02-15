@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { posts } from "../../data/posts";
+import { posts } from ".velite";
 import BlogPostClient from "./BlogPostClient";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   return posts.map((post) => ({
-    slug: post.slug,
+    slug: post.slugAsParams,
   }));
 }
 
@@ -15,7 +15,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
+  const post = posts.find((p) => p.slugAsParams === slug);
 
   if (!post) {
     return {
@@ -47,7 +47,7 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
+  const post = posts.find((p) => p.slugAsParams === slug);
 
   if (!post) {
     notFound();

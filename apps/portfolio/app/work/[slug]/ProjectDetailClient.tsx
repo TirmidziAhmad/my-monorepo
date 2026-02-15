@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "../../data/projects";
+import { Project } from ".velite";
 
 export default function ProjectDetailClient({ project }: { project: Project }) {
   return (

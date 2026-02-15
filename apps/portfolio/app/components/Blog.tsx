@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { AnimatedSection, textVariant, imageVariant } from "./AnimatedSection";
 import { Calendar, Clock, ArrowUpRight, Star } from "lucide-react";
-import { posts } from "../data/posts";
+import { posts } from ".velite";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,7 +36,7 @@ function Blog() {
           {posts.map((post, index) => (
             <motion.a
               key={index}
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.slugAsParams}`}
               variants={imageVariant}
               whileHover={{ y: -5 }}
               className="group relative flex flex-col h-full p-8 rounded-2xl 

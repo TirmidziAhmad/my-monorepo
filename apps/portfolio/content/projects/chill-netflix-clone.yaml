@@ -1,0 +1,36 @@
+slug: chill-netflix-clone
+title: Chill Netflix Clone
+description: A fullstack Netflix clone app built with React and Express, using Zustand for front-end state management.
+link: https://chill-netflix-clone.vercel.app/
+github: https://github.com/TirmidziAhmad/chill-netflix-clone
+date: November 2024
+tags:
+  - React
+  - Express
+  - Zustand
+  - Fullstack
+gradient: from-red-500/20 via-rose-500/10 to-purple-500/20
+icon: 🎬
+featured: true
+role: Lead Fullstack Developer
+overview: Chill Netflix is a personal project aimed at replicating the core user experience of Netflix while focusing on performance and state management simplicity. The challenge was to handle a large catalog of media with smooth transitions and real-time user preference updates.
+features:
+  - Dynamic movie catalog with horizontal scrolling
+  - User authentication and profile management
+  - Personalized watchlist functionality
+  - Responsive video player with controls
+  - Global state management using Zustand
+achievements:
+  - Optimized image loading for smooth infinite scrolling
+  - Implemented a lightweight auth system with JWT
+  - Created a robust API wrapper for TMDB integration
+result: Successfully built a pixel-perfect clone that handles media metadata efficiently, providing a seamless browsing experience even on low-bandwidth connections.
+technologies:
+  - React
+  - Next.js
+  - Zustand
+  - Express
+  - Node.js
+  - Tailwind CSS
+  - TMDB API
+image: /fullstack.webp

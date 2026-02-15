@@ -5,7 +5,8 @@ import { AnimatedSection, textVariant } from "../../components/AnimatedSection";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Post } from "../../data/posts";
+import { Post } from ".velite";
+import { MDXContent } from "../../components/mdx-content";
 
 const contentVariant = {
   hidden: { opacity: 0, y: 20 },
@@ -106,8 +107,9 @@ export default function BlogPostClient({ post }: { post: Post }) {
               prose-blockquote:border-l-foreground/20 dark:prose-blockquote:border-l-white/20 prose-blockquote:text-gray-500 dark:prose-blockquote:text-gray-400 prose-blockquote:italic prose-blockquote:bg-foreground/[0.02] dark:prose-blockquote:bg-white/[0.02] prose-blockquote:p-6 prose-blockquote:rounded-r-xl
               prose-code:text-rose-500 dark:prose-code:text-rose-400 prose-code:bg-rose-400/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
             "
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          >
+            <MDXContent code={post.content} />
+          </div>
         </motion.div>
       </AnimatedSection>
 
