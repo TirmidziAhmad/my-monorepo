@@ -4,6 +4,7 @@ import Project from "./components/Project";
 import Blog from "./components/Blog";
 import Hero from "./components/Hero";
 import ScrollToTop from "./components/ScrollToTop";
+import TechVelocitySection from "./components/TechVelocitySection";
 import { getYearsOfExperience } from "./lib/experience";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
@@ -48,6 +49,8 @@ export default function Home() {
       >
         <Hero />
       </section>
+
+      {/* <TechVelocitySection /> */}
 
       {/* About */}
       <section
