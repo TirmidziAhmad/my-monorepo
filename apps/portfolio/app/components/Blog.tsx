@@ -41,7 +41,7 @@ function Blog() {
               whileHover={{ y: -5 }}
               className="group relative flex flex-col h-full p-8 rounded-2xl 
                 bg-foreground/[0.03] backdrop-blur-xl border border-foreground/10 
-                hover:border-foreground/30 transition-all duration-300
+                hover:border-foreground/30
                 hover:shadow-lg
                 cursor-pointer"
             >
@@ -53,6 +53,7 @@ function Blog() {
                   src={post.image}
                   alt={post.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

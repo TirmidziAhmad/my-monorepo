@@ -35,7 +35,7 @@ function Project() {
                 whileHover={{ y: -6 }}
                 className="group relative flex flex-col h-full rounded-2xl 
                   bg-foreground/[0.03] backdrop-blur-xl border border-foreground/10 
-                  hover:border-foreground/20 transition-all duration-500
+                  hover:border-foreground/20
                   hover:shadow-lg"
               >
                 {/* Hover glow overlay */}
