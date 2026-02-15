@@ -39,7 +39,19 @@ function Footer() {
         <motion.div variants={textVariant} className="mb-12">
           <Link href="/contact" className="group relative inline-block">
             <span className="text-5xl md:text-8xl font-bold text-foreground tracking-tighter transition-all duration-300 group-hover:opacity-70">
-              SAY HI 🤙
+              SAY HI{" "}
+              <motion.span
+                animate={{ rotate: [0, 10, -10, 10, -10, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                  ease: "easeInOut",
+                }}
+                style={{ display: "inline-block" }}
+              >
+                🤙
+              </motion.span>
             </span>
             <span className="absolute -bottom-2 left-0 w-0 h-1 bg-current transition-all duration-300 group-hover:w-full" />
           </Link>

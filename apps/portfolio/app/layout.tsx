@@ -4,6 +4,7 @@ import Link from "next/link";
 import NavLinks from "./components/NavLinks";
 import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import ProgressBar from "./components/ProgressBar";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
@@ -100,7 +101,7 @@ export default function RootLayout({
 
         {/* content */}
         <div className="flex-grow flex flex-col justify-center items-center z-30 px-5 md:px-10">
-          {children}
+          <ProgressBar>{children}</ProgressBar>
         </div>
 
         {/* footer */}

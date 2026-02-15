@@ -8,7 +8,11 @@ import functionality from "../../public/functionality.jpg";
 import { motion } from "framer-motion";
 import { AnimatedSection, imageVariant, textVariant } from "./AnimatedSection";
 
-function Introduction() {
+interface IntroductionProps {
+  yearsOfExperience: number;
+}
+
+function Introduction({ yearsOfExperience }: IntroductionProps) {
   return (
     <div className="space-y-3 md:space-y-5 px-4">
       {/* Line 1 */}
@@ -28,7 +32,7 @@ function Introduction() {
               />
             </motion.span>
             <motion.span variants={textVariant} className="text-foreground/60">
-              is Indonesian
+              is an Indonesian
             </motion.span>
             <motion.span variants={imageVariant}>
               <Image
@@ -48,10 +52,10 @@ function Introduction() {
         <h2 className="text-xl md:text-4xl lg:text-6xl font-light">
           <span className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
             <motion.span variants={textVariant} className="text-foreground/60">
-              1+ year of experience
+              {yearsOfExperience}+ years of experience
             </motion.span>
             <motion.span variants={textVariant} className="text-foreground">
-              web developer
+              web dev
             </motion.span>
             <motion.span variants={imageVariant}>
               <Image
@@ -78,7 +82,10 @@ function Introduction() {
       <AnimatedSection>
         <h2 className="text-xl md:text-4xl lg:text-6xl font-light">
           <span className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
-            <motion.span variants={textVariant} className="text-foreground/40">
+            <motion.span
+              variants={textVariant}
+              className="text-foreground/40 text-gray-500"
+            >
               Who turns
             </motion.span>
             <motion.span variants={imageVariant}>
@@ -90,8 +97,11 @@ function Introduction() {
                 className="hidden md:inline w-16 md:w-20 rounded-lg object-cover ring-2 ring-foreground/10 hover:ring-foreground/30 hover:scale-110 hover:-rotate-3 transition-all duration-300"
               />
             </motion.span>
-            <motion.span variants={textVariant} className="text-foreground/40">
-              ideas
+            <motion.span
+              variants={textVariant}
+              className="text-foreground/40 text-gray-500"
+            >
+              ambitious ideas
             </motion.span>
           </span>
         </h2>
@@ -101,7 +111,10 @@ function Introduction() {
       <AnimatedSection>
         <h2 className="text-xl md:text-4xl lg:text-6xl font-light">
           <span className="flex flex-wrap gap-2 md:gap-3 items-center justify-center">
-            <motion.span variants={textVariant} className="text-foreground/40">
+            <motion.span
+              variants={textVariant}
+              className="text-foreground/40 text-gray-500"
+            >
               into
             </motion.span>
             <motion.span variants={imageVariant}>
@@ -115,9 +128,9 @@ function Introduction() {
             </motion.span>
             <motion.span
               variants={textVariant}
-              className="text-foreground font-medium opacity-90"
+              className="text-foreground/40 text-gray-500 opacity-90"
             >
-              functionality.
+              high-performance functionality.
             </motion.span>
           </span>
         </h2>

@@ -1,15 +1,16 @@
-"use client";
-import { useEffect } from "react";
 import Introduction from "./components/Introduction";
 import TechStack from "./components/TechStack";
 import Project from "./components/Project";
 import Blog from "./components/Blog";
 import Hero from "./components/Hero";
+import ScrollToTop from "./components/ScrollToTop";
+import { getYearsOfExperience } from "./lib/experience";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 const jsonLd = {
   "@context": "https://schema.org",
+  "@id": `${BASE_URL}/#person`,
   "@type": "Person",
   name: "Tirmidzi Ahmad",
   url: BASE_URL,
@@ -29,12 +30,11 @@ const jsonLd = {
 };
 
 export default function Home() {
-  useEffect(() => {
-    // Scroll to top when home page mounts to ensure Hero is visible
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  const yearsOfExperience = getYearsOfExperience();
+
   return (
     <main className="overflow-x-hidden">
+      <ScrollToTop />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -55,7 +55,7 @@ export default function Home() {
         aria-label="About Tirmidzi Ahmad"
         className="min-h-screen flex flex-col justify-center items-center gap-4 font-normal"
       >
-        <Introduction />
+        <Introduction yearsOfExperience={yearsOfExperience} />
       </section>
 
       {/* Tech Stack */}
@@ -67,10 +67,10 @@ export default function Home() {
         <TechStack />
       </section> */}
 
-      {/* Personal Projects */}
+      {/* Projects */}
       <section
         id="projects"
-        aria-label="Personal projects"
+        aria-label="Projects"
         className="min-h-screen flex flex-col items-center justify-center"
       >
         <Project />

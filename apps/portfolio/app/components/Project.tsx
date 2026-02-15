@@ -13,7 +13,7 @@ function Project() {
           variants={textVariant}
           className="text-4xl md:text-6xl font-bold mb-4 text-center text-foreground tracking-tight"
         >
-          Personal Projects
+          Projects
         </motion.h2>
         <motion.p
           variants={textVariant}
